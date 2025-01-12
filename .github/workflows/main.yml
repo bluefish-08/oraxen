@@ -24,17 +24,13 @@ jobs:
       - name: Change wrapper permissions
         run: chmod +x ./gradlew
         
-      - name: ls
-        run: ls
         
       - name: build
         run: ./gradlew build
         
-      - name: test
-        run: ls
         
       - name: capture build artifacts
         uses: actions/upload-artifact@v4
         with:
           name: build
-          path: plugin/build/libs/
+          path: ./*
